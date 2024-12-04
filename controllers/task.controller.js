@@ -13,13 +13,6 @@ export const getTaskByUser = async (req, res, next) => {
     if (status) {
       query['status'] = status;
     }
-    console.log('---');
-    console.log(`status = ${status}`);
-    console.log(`orderBy = ${orderBy}`);
-    console.log(`order = ${order}`);
-    console.log(`sort = ${JSON.stringify(sort)}`);
-    console.log(orderBy);
-    console.log(sort);
     const tasks = await collection
       .find(query)
       .sort(sort)
